@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
+  <display-name>serie2</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+ </welcome-file-list>
+    <servlet>
+        <servlet-name>ChampionInfoServlet</servlet-name>
+        <servlet-class>be.condorcet.ChampionInfoServlet</servlet-class>
+        <init-param>
+            <param-name>nomChampion</param-name>
+            <param-value>Yasuo</param-value>
+        </init-param>
+        <init-param>
+            <param-name>roleChampion</param-name>
+            <param-value>Assassin</param-value>
+        </init-param>
+        <init-param>
+            <param-name>difficulteChampion</param-name>
+            <param-value>Difficile</param-value>
+        </init-param>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ChampionInfoServlet</servlet-name>
+        <url-pattern>/championInfo</url-pattern>
+    </servlet-mapping>
+</web-app>
