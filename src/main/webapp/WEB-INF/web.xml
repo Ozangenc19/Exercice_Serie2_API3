@@ -1,28 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" id="WebApp_ID" version="6.0">
-  <display-name>serie2</display-name>
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
- </welcome-file-list>
-    <servlet>
+<web-app id="WebApp_ID" version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<display-name>serie_2</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
         <servlet-name>ChampionInfoServlet</servlet-name>
         <servlet-class>be.condorcet.ChampionInfoServlet</servlet-class>
+        
+        <!-- Définition des paramètres du champion -->
         <init-param>
-            <param-name>nomChampion</param-name>
+            <param-name>championName</param-name>
             <param-value>Yasuo</param-value>
         </init-param>
         <init-param>
-            <param-name>roleChampion</param-name>
+            <param-name>championRole</param-name>
             <param-value>Assassin</param-value>
         </init-param>
         <init-param>
-            <param-name>difficulteChampion</param-name>
+            <param-name>championDifficulty</param-name>
             <param-value>Difficile</param-value>
         </init-param>
     </servlet>
-
+    
     <servlet-mapping>
         <servlet-name>ChampionInfoServlet</servlet-name>
-        <url-pattern>/championInfo</url-pattern>
+        <url-pattern>/champion-info</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>AgentListServlet</servlet-name>
+        <servlet-class>be.condorcet.AgentListServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>AgentListServlet</servlet-name>
+        <url-pattern>/agent-list</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>UpdateAgentServlet</servlet-name>
+        <servlet-class>be.condorcet.UpdateAgentServlet</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>UpdateAgentServlet</servlet-name>
+        <url-pattern>/update-agent</url-pattern>
     </servlet-mapping>
 </web-app>
